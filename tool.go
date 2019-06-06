@@ -22,5 +22,42 @@ func reveser(s string) string {
 	return string(a)
 }
 
+//斐波那契数列
+func fib() func() int {
+	a, b := 0, 1
+	return func() int {
+		a, b = b, a+b
+		return a
+	}
+}
+//求sl切片最小值，最大值
+func compare(sl []int) (ma, mi int) {
+	ma, mi = sl[0], sl[0]
+	for _, v := range sl {
+		if v >= ma {
+			ma = v
+		}
+		if v <= mi {
+			mi = v
+		}
+	}
+	return
+}
+//冒泡排序
+func bubble(l []int) []int {
+	if len(l) == 0 {
+		return l
+	}
+	for i := 0; i < len(l); i++ {
+		for j := i + 1; j < len(l); j++ {
+			if l[i] > l[j] {
+				l[i], l[j] = l[j], l[i]
+			}
+		}
+	}
+	return l
+}
+
+
 
 
