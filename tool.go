@@ -58,6 +58,16 @@ func bubble(l []int) []int {
 	return l
 }
 
+//整数转2进制
+func convertToBin(n int) string {
+	result := ""
+	for ; n > 0; n /= 2 {
+		lsb := n % 2
+		result = strconv.Itoa(lsb) + result
+	}
+	return result
+}
+
 
 
 
