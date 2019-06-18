@@ -1,5 +1,9 @@
+package tool
+
+import "strconv"
+
 //计算一个类型为float64的slice的平均值
-func average(xs []float64) float64 {
+func Average(xs []float64) float64 {
 	sum := 0.0
 	if len(xs) == 0 {
 		return 0
@@ -11,7 +15,7 @@ func average(xs []float64) float64 {
 }
 
 //字符串翻转算法
-func reveser(s string) string {
+func Reveser(s string) string {
 	if len(s) == 0 {
 		return ""
 	}
@@ -23,15 +27,16 @@ func reveser(s string) string {
 }
 
 //斐波那契数列
-func fib() func() int {
+func Fib() func() int {
 	a, b := 0, 1
 	return func() int {
 		a, b = b, a+b
 		return a
 	}
 }
+
 //求sl切片最小值，最大值
-func compare(sl []int) (ma, mi int) {
+func Compare(sl []int) (ma, mi int) {
 	ma, mi = sl[0], sl[0]
 	for _, v := range sl {
 		if v >= ma {
@@ -43,8 +48,9 @@ func compare(sl []int) (ma, mi int) {
 	}
 	return
 }
+
 //冒泡排序
-func bubble(l []int) []int {
+func Bubble(l []int) []int {
 	if len(l) == 0 {
 		return l
 	}
@@ -59,7 +65,7 @@ func bubble(l []int) []int {
 }
 
 //整数转2进制
-func convertToBin(n int) string {
+func ConvertToBin(n int) string {
 	result := ""
 	for ; n > 0; n /= 2 {
 		lsb := n % 2
@@ -69,7 +75,7 @@ func convertToBin(n int) string {
 }
 
 //计算字符串中最大不重复的字串的长度
-func substrNoRepeat(s string) int {
+func SubstrNoRepeat(s string) int {
 	lastOccurred := make(map[rune]int)
 	start := 0
 	maxLength := 0
@@ -84,6 +90,3 @@ func substrNoRepeat(s string) int {
 	}
 	return maxLength
 }
-
-
-
