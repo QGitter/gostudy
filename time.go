@@ -2,6 +2,10 @@ package main
 
 import "time"
 
+const DATETIMEFORMAT = "2006-01-02 15:04:05" //必须是2006-01-02 15:04:05这个时间
+const DATEFORMAT = "2006-01-02"
+const DURATIONEND = "23h59m59s"
+
 func main() {
 
 }
