@@ -13,7 +13,7 @@ import (
 	"time"
 )
 
-const KEY = "dev!@#$%^168"
+const KEY = "zhangsan@#$%^168"
 
 var client = &http.Client{
 	Timeout: 10 * time.Second,
@@ -96,19 +96,19 @@ func Get(uri string) string {
 
 func CommHeader(req *http.Request, params map[string]string) {
 	req.Header.Set("Content-Type", "application/x-www-form-urlencoded;charset=utf-8;")
-	req.Header.Set("Game-Meios-Version-Name", "4.1.2")
-	req.Header.Set("Game-Android-Version", "23")
-	req.Header.Set("Game-Client-Id", "1189857322")
-	req.Header.Set("Game-Android-Id", "9cceee1466ced851")
-	req.Header.Set("Game-Model", "MP1503")
+	req.Header.Set("Version-Name", "4.1.2")
+	req.Header.Set("Android-Version", "23")
+	req.Header.Set("Client-Id", "aaa")
+	req.Header.Set("Android-Id", "eee")
+	req.Header.Set("Model", "xxx")
 	req.Header.Set("User-Agent", "Mozilla/5.0 (Linux; Android 6.0; MP1503 Build/MRA58K; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/44.0.2403.119 Mobile Safari/537.36")
-	req.Header.Set("Game-Version", "1.4.0")
-	req.Header.Set("Game-Access-Token", "_v2NWQxMmYzMDYjMTUzNjEyMTAxMSMwIzYxIzYxY2MyM2Y0YWI1M2NjNDM3Yzk5YzM5MzRlMjQ4YTFjODkjI0JKX1NIIzViMThiMWIz")
+	req.Header.Set("Version", "1.4.0")
+	req.Header.Set("Access-Token", "_v2NWQxMmYzMDYjMTUzNjEyMTAxMSMwIzYxIzYxY2MyM2Y0YWI1M2NjNDM3Yzk5YzM5MzRlMjQ4YTFjODkjI0JKX1NIIzViMThiMWIz")
 	req.Header.Set("client_version_code", "1004000")
-	req.Header.Set("Game-Imei", "860273030007340")
-	req.Header.Set("Game-Sign", GetSign(params))
-	req.Header.Set("Game-Network", "5")
-	req.Header.Set("Game-Language", "zh-Hans")
+	req.Header.Set("Imei", "860273030007340")
+	req.Header.Set("Sign", GetSign(params))
+	req.Header.Set("Network", "5")
+	req.Header.Set("Language", "zh-Hans")
 }
 
 func GetSign(params map[string]string) string {
